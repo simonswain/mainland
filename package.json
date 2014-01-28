@@ -1,0 +1,26 @@
+{
+  "name": "mainland",
+  "version": "0.0.1",
+  "description": "Simple message queue and distribution using Redis",
+  "homepage": "https://github.com/simonswain/mainland",
+  "author": {
+    "name": "Simon Swain",
+    "email": "simon@simonswain.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "redis": "~0.10.0",
+    "hiredis": "~0.1.16",
+    "optimist": "~0.6.0",
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0"
+  }
+}
