@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Simple message queue and distribution using Redis",
   "homepage": "https://github.com/simonswain/mainland",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/simonswain/mainland.git"
+  },
   "author": {
     "name": "Simon Swain",
     "email": "simon@simonswain.com"
