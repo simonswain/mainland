@@ -2,7 +2,7 @@
 
 Simple message queue and distribution
 
-Version 0.0.2
+Version 0.0.3
 
 [![Build Status](https://travis-ci.org/simonswain/mainland.png)](https://travis-ci.org/simonswain/mainland)
 
@@ -71,7 +71,7 @@ Router is like
 ## Release History
 
 * 28/01/2014 0.0.1 Initial release
-* 03/11/2014 0.0.2 Redux
+* 03/11/2014 0.0.3 Redux
 
 ## License
 Copyright (c) 2014 Simon Swain
