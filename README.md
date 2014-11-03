@@ -41,21 +41,34 @@ Delete all unprocessed messages from a topic
 <a name="send" />
 ### send(topic, data, done)
 
-Add a message to the topic queue
+```javascript
+api.send('my-topic', {foo: 'bar'}, next);
+```
+Add a message `data` to the topic queue
 
 <a name="send" />
 ### take(topic, done)
+
+```
+var done = function(err, data){};
+```
 
 Takes one (if any) message off the topic queue
 
 <a name="listen" />
 ### listen(topic, handler)
 
+```
+var handler = function(err, data){};
+```
+
 Watches the end of the topic queue and calls `handler` with the next
 available message.
 
-If multiple listeners are on the same topic, they will compete for
-messages. IF you want to distribute the same message to multiple handlers, use `#router`
+Multiple listeners on the same topic will compete for messages.
+
+If you want to distribute the same message to multiple handlers, use
+`#router`
 
 <a name="router" />
 ### router(routes)
