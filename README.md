@@ -77,7 +77,7 @@ Fans out one topic to multiple topics
 
 Router is like
 ```javascript
-{'source-topic':['target-1','target-1'], ...}
+{'source-topic':['target-1','target-2'], ...}
 ```
 
 
