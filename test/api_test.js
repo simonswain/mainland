@@ -26,62 +26,62 @@ exports.api = {
     test.done();
   },
 
-  // 'take-none': function(test) {
-  //   test.expect(1);
-  //   api.take(
-  //     topic,
-  //     function(err, res){
-  //       test.equal(typeof res, 'undefined');
-  //       test.done();
-  //     });
-  // },
+  'take-none': function(test) {
+    test.expect(1);
+    api.take(
+      topic,
+      function(err, res){
+        test.equal(typeof res, 'undefined');
+        test.done();
+      });
+  },
 
-  // 'send': function(test) {
-  //   topic = 'my-topic';
-  //   msg = {foo: 'bar'};
-  //   api.send(
-  //     topic,
-  //     msg,
-  //     function(){
-  //       test.done();
-  //     });
-  // },
+  'send': function(test) {
+    topic = 'my-topic';
+    msg = {foo: 'bar'};
+    api.send(
+      topic,
+      msg,
+      function(){
+        test.done();
+      });
+  },
 
-  // 'take-one': function(test) {
-  //   test.expect(1);
-  //   api.take(
-  //     topic,
-  //     function(err, res){
-  //       test.deepEqual(msg, res);
-  //       test.done();
-  //     });
-  // },
+  'take-one': function(test) {
+    test.expect(1);
+    api.take(
+      topic,
+      function(err, res){
+        test.deepEqual(msg, res);
+        test.done();
+      });
+  },
 
-  // 'listen-one': function(test) {
-  //   test.expect(1);
+  'listen-one': function(test) {
+    test.expect(1);
 
-  //   msg = {'listen-to':'my-data'};
+    msg = {'listen-to':'my-data'};
 
-  //   var listener;
+    var listener;
 
-  //   var stopped = function(){
-  //     test.done();
-  //   };
+    var stopped = function(){
+      test.done();
+    };
 
-  //   var handler = function(res, done){
-  //     test.deepEqual(msg, res);
-  //     listener.stop(stopped);
-  //     done();
-  //   };
+    var handler = function(res, done){
+      test.deepEqual(msg, res);
+      listener.stop(stopped);
+      done();
+    };
 
-  //   listener = api.listener(topic, handler);
-  //   api.send(topic, msg);
+    listener = api.listener(topic, handler);
+    api.send(topic, msg);
 
-  // },
+  },
 
   'route-one-to-two': function(test) {
 
-    //test.expect(1);
+    test.expect(1);
 
     msg = {
       'listen-to': 'my-data'
@@ -97,8 +97,8 @@ exports.api = {
 
     var handler = function(res, done){
       count ++;
-      //test.deepEqual(msg, res);
       if(count === 2){
+        test.deepEqual(msg, res);
         listener1.stop();
         listener2.stop();
         router.stop(stopped);
