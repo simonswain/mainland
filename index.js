@@ -1,5 +1,11 @@
+/*
+ * mainland
+ * https://github.com/simonswain/mainland
+ *
+ * Copyright (c) 2014 Simon Swain
+ * Licensed under the MIT license.
+ */
+
 "use strict";
 
-exports.Producer = require('./lib/producer');
-exports.Consumer = require('./lib/consumer');
-exports.Router = require('./lib/router');
+module.exports = require('./lib');

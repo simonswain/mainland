@@ -1,4 +1,4 @@
-var Producer = require('../index').Producer;
+var api = require('../index').api;
 
 var topic = 'samples'
 var producer = new Producer(topic);

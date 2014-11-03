@@ -17,14 +17,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "redis": "~0.10.0",
-    "hiredis": "~0.1.16",
-    "optimist": "~0.6.0",
-    "async": "~0.2.10"
+    "async": "^0.9.0",
+    "hiredis": "^0.1.17",
+    "redis": "^0.12.1",
+    "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-nodeunit": "~0.3.0"
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "nodeunit": "^0.9.0"
   }
 }

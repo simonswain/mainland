@@ -1,8 +1,6 @@
 "use strict";
 
 module.exports = function(grunt) {
-
-  // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
     nodeunit: {
@@ -12,8 +10,11 @@ module.exports = function(grunt) {
     },
     jshint: {
       files: [
-        'grunt.js', 
-        'lib/**/*.js', 
+        'Gruntfile.js', 
+        'config.sample.js', 
+        'index.js', 
+        'lib/*.js', 
+        'lib/server/public/js/**/*.js', 
         'test/**/*.js'
       ],
       options: {
@@ -29,13 +30,26 @@ module.exports = function(grunt) {
         eqnull: true,
         node: true
       }
+    },
+    env : {
+      test : {
+        NODE_ENV : 'test'
+      },
+      dev : {
+        NODE_ENV : 'dev'
+      },
+      live : {
+        NODE_ENV : 'live'
+      }
     }
   });
+
+  grunt.loadTasks('tasks');
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-  grunt.registerTask('test', ['jshint', 'nodeunit:files']);
+  grunt.registerTask('test', ['jshint', 'env:test', 'nodeunit:files']);
   grunt.registerTask('default', ['test']);
 
 };
