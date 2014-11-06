@@ -1,18 +1,23 @@
-var api = require('../index').api;
+var argv = require('optimist').argv;
 
-var topic = 'samples'
-var producer = new Producer(topic);
+var config = require( '../config.sample.js')(process.env.NODE_ENV);
+var api = require('../lib/api.js')(config);
+
+var args = argv._;
+var topic = args[0] || 'example';
 
 setInterval(function(){
 
   var message = {
-    "foo" :  "bar " + new Date()
+    at: new Date().getTime(),
+    value: Math.floor(Math.random() * 100)
   };
 
-  producer.send(
+  api.send(
+    topic,
     message, 
     function(err){
-      console.log(topic, message);
+      console.log('>', topic, message);
     });
 
-}, 1000);
+}, 10);

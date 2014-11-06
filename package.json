@@ -1,6 +1,6 @@
 {
   "name": "mainland",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple message queue and distribution using Redis",
   "homepage": "https://github.com/simonswain/mainland",
   "repository": {
@@ -20,7 +20,8 @@
     "async": "^0.9.0",
     "hiredis": "^0.1.17",
     "redis": "^0.12.1",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "optimist": "^0.6.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

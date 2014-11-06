@@ -81,7 +81,7 @@ exports.api = {
 
   'route-one-to-two': function(test) {
 
-    //test.expect(1);
+    test.expect(1);
 
     msg = {
       'listen-to': 'my-data'
@@ -97,8 +97,8 @@ exports.api = {
 
     var handler = function(res, done){
       count ++;
-      //test.deepEqual(msg, res);
       if(count === 2){
+        test.deepEqual(msg, res);
         listener1.stop();
         listener2.stop();
         router.stop(stopped);

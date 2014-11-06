@@ -1,14 +1,14 @@
 var argv = require('optimist').argv;
 
-var Consumer = require('../index').Consumer;
+var config = require( '../config.sample.js')(process.env.NODE_ENV);
+var api = require('../lib/api.js')(config);
 
-var topic = argv.topic || 'samples';
+var args = argv._;
+var topic = args[0] || 'example';
 
-var consumer = new Consumer(
+var consumer = api.listener(
   topic, 
   function(msg, done){
-    console.log(topic, msg);
+    console.log(topic, '>', msg);
     done();
   });
-
-consumer.listen();
